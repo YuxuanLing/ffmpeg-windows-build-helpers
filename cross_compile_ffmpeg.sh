@@ -1599,7 +1599,7 @@ build_svt-av1() {
 }
 
 build_svt-vp9() {
-  do_git_checkout https://github.com/OpenVisualCloud/SVT-VP9.git
+  do_git_checkout https://github.com/YuxuanLing/SVT-VP9
   cd SVT-VP9_git
   cd Build
     do_cmake_from_build_dir .. "-DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_PROCESSOR=AMD64"
@@ -2310,7 +2310,7 @@ build_ffmpeg() {
     #SVT-HEVC
     git apply "../SVT-HEVC_git/ffmpeg_plugin/0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch"
     git apply "$patch_dir/SVT-HEVC-0002-doc-Add-libsvt_hevc-encoder-docs.patch"  # upstream patch does not apply on current ffmpeg master
-    git apply "../SVT-VP9_git/ffmpeg_plugin/master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch"
+    git apply "../SVT-VP9_git/ffmpeg_plugin/d43c303038e9bd-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch"
 
     fi
     if [ "$bits_target" = "32" ]; then
